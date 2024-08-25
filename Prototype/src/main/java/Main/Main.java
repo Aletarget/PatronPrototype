@@ -4,13 +4,16 @@
 
 package Main;
 
+import Model.Map;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alejo
  */
 public class Main {
-
+    
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Controller control = new Controller();
     }
 }

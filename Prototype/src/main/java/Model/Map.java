@@ -16,12 +16,21 @@ import PrototypeConcret.TransportCar;
 public class Map {
     private HashMap<String, PrototypeCar> lista = new HashMap<String, PrototypeCar>();
     
-    public Map() {
-        DeportiveCar deportivo = new DeportiveCar("asd", "asda", "asda", "88678");//colocar que aqui se seleccione si desea ver este carro y crearlo
-        TransportCar transporte = new TransportCar("asd","q12qsada" , "asdasd", "asds");//colocar que aqui se seleccione si desea ver este carro y crearlo
-        
-        
-        lista.put("DeportiveCar", deportivo);
-        lista.put("TransportCar", transporte);
+    public String crearMap(String tipoCarro) {
+        if (tipoCarro == "Deportivo"){
+            DeportiveCar deportivo = new DeportiveCar("motorFull", "veloces", "Aerodinamo", "ABS");
+            lista.put("DeportiveCar", deportivo);
+            String texto =  deportivo.getFrenos() + deportivo.getLlantas() + deportivo.getMotor() + deportivo.getTipo();
+            
+        }else if (tipoCarro == "Transporte"){
+            TransportCar transporte = new TransportCar("asd","q12qsada" , "asdasd", "asds");
+            lista.put("TransportCar", transporte);
+            String texto =  "es de transporete";
+            
+        }
     }
+    
+    
+    
+    
 }
