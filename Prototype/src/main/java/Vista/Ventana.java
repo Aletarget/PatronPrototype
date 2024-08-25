@@ -47,7 +47,6 @@ public class Ventana extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 // Acción que se ejecutará cuando se haga clic en el botón
                 mapa.crearMap(texto.getText());
-                mapa.carro(texto.getText());
             }
         });
     }

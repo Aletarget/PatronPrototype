@@ -23,6 +23,7 @@ public class Map {
         if (tipoCarro == "Deportivo"){
             
             lista.put("DeportiveCar", deportivo);
+            System.out.println("bien");
             
         }else if (tipoCarro == "Transporte"){
             
