@@ -8,6 +8,7 @@ import java.util.HashMap;
 import Prototype.PrototypeCar;
 import PrototypeConcret.DeportiveCar;
 import PrototypeConcret.TransportCar;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,17 +17,16 @@ import PrototypeConcret.TransportCar;
 public class Map {
     private HashMap<String, PrototypeCar> lista = new HashMap<String, PrototypeCar>();
     
-    public String crearMap(String tipoCarro) {
+    public void crearMap(String tipoCarro) {
         if (tipoCarro == "Deportivo"){
             DeportiveCar deportivo = new DeportiveCar("motorFull", "veloces", "Aerodinamo", "ABS");
             lista.put("DeportiveCar", deportivo);
-            String texto =  deportivo.getFrenos() + deportivo.getLlantas() + deportivo.getMotor() + deportivo.getTipo();
+            System.out.println("me crearon deportivo");
+            JOptionPane.showMessageDialog(null, "Tipo moto: " + deportivo.getMotor() + " y tipo de freno: " +deportivo.getFrenos());
             
         }else if (tipoCarro == "Transporte"){
             TransportCar transporte = new TransportCar("asd","q12qsada" , "asdasd", "asds");
             lista.put("TransportCar", transporte);
-            String texto =  "es de transporete";
-            
         }
     }
     

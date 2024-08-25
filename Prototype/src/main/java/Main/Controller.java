@@ -5,21 +5,18 @@
 package Main;
 
 import Model.Map;
+import Vista.Ventana;
 import javax.swing.JOptionPane;
 /**
  *
  * @author DEVIN ALZATE
  */
 public class Controller {
-    private Map mapa = new Map();
-    
-    public Controller(){
-        definirDatos();
+    Ventana ventana;
+
+    public Controller() {
+        ventana = new Ventana();
+        ventana.setVisible(true);
     }
     
-    public void definirDatos() {
-        String tipo = JOptionPane.showInputDialog("Ingrese el tipo de carro que quiere. \n ´Deportivo´ o ´Transporte´");
-        mapa.crearMap(tipo);
-        JOptionPane.showMessageDialog(null, "Has creado un tipo de carro " + tipo + " con las caracteristicas: " + mapa.crearMap(tipo));
-    }
 }
