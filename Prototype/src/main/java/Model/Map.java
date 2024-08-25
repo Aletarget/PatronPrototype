@@ -18,19 +18,21 @@ public class Map {
     private HashMap<String, PrototypeCar> lista = new HashMap<String, PrototypeCar>();
     
     public void crearMap(String tipoCarro) {
+        DeportiveCar deportivo = new DeportiveCar("motorFull", "veloces", "Aerodinamo", "ABS");
+        TransportCar transporte = new TransportCar("asd","q12qsada" , "asdasd", "asds");
         if (tipoCarro == "Deportivo"){
-            DeportiveCar deportivo = new DeportiveCar("motorFull", "veloces", "Aerodinamo", "ABS");
+            
             lista.put("DeportiveCar", deportivo);
-            System.out.println("me crearon deportivo");
-            JOptionPane.showMessageDialog(null, "Tipo moto: " + deportivo.getMotor() + " y tipo de freno: " +deportivo.getFrenos());
             
         }else if (tipoCarro == "Transporte"){
-            TransportCar transporte = new TransportCar("asd","q12qsada" , "asdasd", "asds");
+            
             lista.put("TransportCar", transporte);
         }
     }
     
-    
+    public Object carro(String tipo) throws CloneNotSupportedException {
+        return lista.get(tipo).clone();
+    }
     
     
 }
