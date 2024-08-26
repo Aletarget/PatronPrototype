@@ -17,17 +17,13 @@ import javax.swing.JOptionPane;
 public class Map {
     private HashMap<String, PrototypeCar> lista = new HashMap<String, PrototypeCar>();
     
-    public void crearMap(String tipoCarro) {
-        DeportiveCar deportivo = new DeportiveCar("motorFull", "veloces", "Aerodinamo", "ABS");
-        TransportCar transporte = new TransportCar("asd","q12qsada" , "asdasd", "asds");
-        if (tipoCarro == "Deportivo"){
-            
-            lista.put("DeportiveCar", deportivo);
-            System.out.println("bien");
-            
-        }else if (tipoCarro == "Transporte"){
-            
-            lista.put("TransportCar", transporte);
+    public Map(String tipoCarro) {
+        if (tipoCarro.equals("Deportivo")){
+            DeportiveCar deportivo = new DeportiveCar("motorFull", "veloces", "Aerodinamo", "ABS");
+            lista.put("Deportivo", deportivo);
+        }else if (tipoCarro.equals("Transporte")){
+            TransportCar transporte = new TransportCar("motorDiesel","De carga" , "Transporte de mercancia", "Pesada");
+            lista.put("Transporte", transporte);
         }
     }
     

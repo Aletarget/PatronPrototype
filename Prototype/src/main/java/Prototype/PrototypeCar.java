@@ -27,24 +27,13 @@ public class PrototypeCar implements Cloneable{
         return motor;
     }
 
-    public void setMotor(String motor) {
-        this.motor = motor;
-    }
-
     public String getLlantas() {
         return llantas;
-    }
-
-    public void setLlantas(String llantas) {
-        this.llantas = llantas;
     }
 
     public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
     
 }

@@ -15,6 +15,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import Model.Map;
+import Prototype.PrototypeCar;
+import PrototypeConcret.DeportiveCar;
+import PrototypeConcret.TransportCar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,7 +28,7 @@ import Model.Map;
 public class Ventana extends JFrame{
     private Map mapa;
     public Ventana() {
-        mapa = new Map();
+        
         // Configurar el JFrame
         setTitle("Car Selector");
         setSize(400, 200);
@@ -44,10 +49,32 @@ public class Ventana extends JFrame{
         
         boton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                // Acción que se ejecutará cuando se haga clic en el botón
-                mapa.crearMap(texto.getText());
-            }
-        });
+            public void actionPerformed(ActionEvent e){
+                
+                String tipoCarro = texto.getText();
+                System.out.println(tipoCarro);
+                if (tipoCarro.equals("Deportivo")) {
+                    try {
+                        Map carp = new Map(tipoCarro);
+                        DeportiveCar car = (DeportiveCar) carp.carro(tipoCarro);
+                        JOptionPane.showMessageDialog(null, "Se ha clona un objeto de tipo DeportiveCar:\nMotor: "+car.getMotor()+"\nLlantas: "+car.getLlantas()+"\nTipo: "+car.getTipo()+
+                                "\nFrenos: "+car.getFrenos()+"\nObjeto: "+car);
+                    } catch (CloneNotSupportedException ex) {
+                        Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }else if(tipoCarro.equals("Transporte")){
+                    try {
+                        Map carp = new Map(tipoCarro);
+                        TransportCar car = (TransportCar) carp.carro(tipoCarro);
+                        JOptionPane.showMessageDialog(null, "Se ha clona un objeto de tipo TransportCar:\nMotor: "+car.getMotor()+"\nLlantas: "+car.getLlantas()+"\nTipo: "+car.getTipo()+
+                                "\nSuspension: "+car.getSuspension()+"\nObjeto: "+car);
+                    } catch (CloneNotSupportedException ex) {
+                        Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }else{
+                    JOptionPane.showConfirmDialog(null, "Entrada no valida, intente denuevo");
+                } 
+            }   
+            });
     }
 }
