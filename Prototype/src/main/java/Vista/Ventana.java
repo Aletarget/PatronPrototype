@@ -72,7 +72,7 @@ public class Ventana extends JFrame{
                         Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }else{
-                    JOptionPane.showConfirmDialog(null, "Entrada no valida, intente denuevo");
+                    JOptionPane.showMessageDialog(null, "Entrada no valida, intente denuevo");
                 } 
             }   
             });
