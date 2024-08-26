@@ -57,7 +57,7 @@ public class Ventana extends JFrame{
                     try {
                         Map carp = new Map(tipoCarro);
                         DeportiveCar car = (DeportiveCar) carp.carro(tipoCarro);
-                        JOptionPane.showMessageDialog(null, "Se ha clona un objeto de tipo DeportiveCar:\nMotor: "+car.getMotor()+"\nLlantas: "+car.getLlantas()+"\nTipo: "+car.getTipo()+
+                        JOptionPane.showMessageDialog(null, "Se ha clonado un objeto de tipo DeportiveCar:\nMotor: "+car.getMotor()+"\nLlantas: "+car.getLlantas()+"\nTipo: "+car.getTipo()+
                                 "\nFrenos: "+car.getFrenos()+"\nObjeto: "+car);
                     } catch (CloneNotSupportedException ex) {
                         Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
@@ -66,7 +66,7 @@ public class Ventana extends JFrame{
                     try {
                         Map carp = new Map(tipoCarro);
                         TransportCar car = (TransportCar) carp.carro(tipoCarro);
-                        JOptionPane.showMessageDialog(null, "Se ha clona un objeto de tipo TransportCar:\nMotor: "+car.getMotor()+"\nLlantas: "+car.getLlantas()+"\nTipo: "+car.getTipo()+
+                        JOptionPane.showMessageDialog(null, "Se ha clonado un objeto de tipo TransportCar:\nMotor: "+car.getMotor()+"\nLlantas: "+car.getLlantas()+"\nTipo: "+car.getTipo()+
                                 "\nSuspension: "+car.getSuspension()+"\nObjeto: "+car);
                     } catch (CloneNotSupportedException ex) {
                         Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
