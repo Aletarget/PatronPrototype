@@ -27,8 +27,4 @@ public class DeportiveCar extends Prototype.PrototypeCar{
     public String getFrenos() {
         return frenos;
     }
-
-    public void setFrenos(String frenos) {
-        this.frenos = frenos;
-    }
 }

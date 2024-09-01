@@ -5,6 +5,7 @@
 package Main;
 
 import Model.Map;
+import Prototype.PrototypeCar;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,7 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class Main {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         Controller control = new Controller();
     }
 }
