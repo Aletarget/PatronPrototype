@@ -19,10 +19,10 @@ public class Map {
     
     public Map(String tipoCarro) {
         if (tipoCarro.equals("Deportivo")){
-            DeportiveCar deportivo = new DeportiveCar("motorFull", "veloces", "Aerodinamo", "ABS");
+            DeportiveCar deportivo = DeportiveCar.getInstancia();
             lista.put("Deportivo", deportivo);
         }else if (tipoCarro.equals("Transporte")){
-            TransportCar transporte = new TransportCar("motorDiesel","De carga" , "Transporte de mercancia", "Pesada");
+            TransportCar transporte = TransportCar.getInstancia();
             lista.put("Transporte", transporte);
         }
     }
