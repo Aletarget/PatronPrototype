@@ -18,7 +18,7 @@ public class Map {
     private static Map instanciaUnica;
     private HashMap<String, PrototypeCar> lista = new HashMap<String, PrototypeCar>();
     
-    public static synchronized Map getInstance(String tipoCarro) {
+    public static Map getInstance(String tipoCarro) {
         if (instanciaUnica == null) {
             instanciaUnica = new Map(tipoCarro);
         }
