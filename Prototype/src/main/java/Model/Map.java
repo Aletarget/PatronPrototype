@@ -15,14 +15,22 @@ import javax.swing.JOptionPane;
  * @author DEVIN ALZATE
  */
 public class Map {
+    private static Map instanciaUnica;
     private HashMap<String, PrototypeCar> lista = new HashMap<String, PrototypeCar>();
+    
+    public static synchronized Map getInstance(String tipoCarro) {
+        if (instanciaUnica == null) {
+            instanciaUnica = new Map(tipoCarro);
+        }
+        return instanciaUnica;
+    }
     
     public Map(String tipoCarro) {
         if (tipoCarro.equals("Deportivo")){
-            DeportiveCar deportivo = DeportiveCar.getInstancia();
+            DeportiveCar deportivo = new DeportiveCar(tipoCarro, tipoCarro, tipoCarro, tipoCarro);
             lista.put("Deportivo", deportivo);
         }else if (tipoCarro.equals("Transporte")){
-            TransportCar transporte = TransportCar.getInstancia();
+            TransportCar transporte = new TransportCar(null,null,null,null);
             lista.put("Transporte", transporte);
         }
     }

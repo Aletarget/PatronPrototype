@@ -11,15 +11,8 @@ package PrototypeConcret;
 public class TransportCar extends Prototype.PrototypeCar{
     private static TransportCar inst;
     private String suspension;
-
-    public static TransportCar getInstancia(){
-            if(inst==null){
-           inst = new TransportCar("pruebas:D", "pruebas:D", "pruebas:D", "pruebas:D");
-       }
-       return inst;
-    }
     
-    public TransportCar(String motor, String llantas, String tipo, String suspension) {
+    private TransportCar(String motor, String llantas, String tipo, String suspension) {
         super(motor, llantas, tipo);
         this.suspension = suspension;
     }

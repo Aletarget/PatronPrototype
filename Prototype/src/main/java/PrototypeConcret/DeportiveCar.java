@@ -11,13 +11,6 @@ package PrototypeConcret;
 public class DeportiveCar extends Prototype.PrototypeCar{
     public static DeportiveCar inst;
     private String frenos;
-
-    public static DeportiveCar getInstancia(){
-            if(inst==null){
-           inst = new DeportiveCar("Prueba de deportivo", "Prueba de deportivo", "Prueba de deportivo", "Prueba de deportivo");
-       }
-       return inst;
-    }
     
     public DeportiveCar(String motor, String llantas, String tipo, String frenos) {
         super(motor, llantas, tipo);

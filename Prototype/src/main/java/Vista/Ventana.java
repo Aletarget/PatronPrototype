@@ -51,28 +51,27 @@ public class Ventana extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e){
                 
-                String tipoCarro = texto.getText();
-                System.out.println(tipoCarro);
-                if (tipoCarro.equals("Deportivo")) {
-                    try {
-                        Map carp = new Map(tipoCarro);
-                        DeportiveCar car = (DeportiveCar) carp.carro(tipoCarro);
-                        JOptionPane.showMessageDialog(null, "Se ha clonado un objeto de tipo DeportiveCar:\nMotor: "+car.getMotor()+"\nLlantas: "+car.getLlantas()+"\nTipo: "+car.getTipo()+
-                                "\nFrenos: "+car.getFrenos()+"\nObjeto: "+car);
-                    } catch (CloneNotSupportedException ex) {
-                        Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
+                try {
+                    String tipoCarro = texto.getText();
+                    System.out.println(tipoCarro);
+                    Map carp = Map.getInstance(tipoCarro);
+                    TransportCar carT = (TransportCar) carp.carro(tipoCarro);
+                    DeportiveCar carD = (DeportiveCar) carp.carro(tipoCarro);
+                    
+                    if (tipoCarro.equals("Deportivo")) {
+                        JOptionPane.showMessageDialog(null, "Se ha clonado un objeto de tipo DeportiveCar:\nMotor: "+carD.getMotor()+"\nLlantas: "+carD.getLlantas()+"\nTipo: "+carD.getTipo()+
+                                    "\nFrenos: "+carD.getFrenos()+"\nObjeto: "+carD);
+                        
+                        
+                    }else if(tipoCarro.equals("Transporte")){
+                    JOptionPane.showMessageDialog(null, "Se ha clonado un objeto de tipo TransportCar:\nMotor: "+carT.getMotor()+"\nLlantas: "+carT.getLlantas()+"\nTipo: "+carT.getTipo()+
+                                    "\nSuspension: "+carT.getSuspension()+"\nObjeto: "+carT);
+                        
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Entrada no valida, intente denuevo");
                     }
-                }else if(tipoCarro.equals("Transporte")){
-                    try {
-                        Map carp = new Map(tipoCarro);
-                        TransportCar car = (TransportCar) carp.carro(tipoCarro);
-                        JOptionPane.showMessageDialog(null, "Se ha clonado un objeto de tipo TransportCar:\nMotor: "+car.getMotor()+"\nLlantas: "+car.getLlantas()+"\nTipo: "+car.getTipo()+
-                                "\nSuspension: "+car.getSuspension()+"\nObjeto: "+car);
-                    } catch (CloneNotSupportedException ex) {
-                        Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }else{
-                    JOptionPane.showMessageDialog(null, "Entrada no valida, intente denuevo");
+                } catch (CloneNotSupportedException ex) {
+                    Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);
                 } 
             }   
             });
